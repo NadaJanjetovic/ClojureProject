@@ -8,9 +8,8 @@ Download from http://example.com/FIXME.
 
 ## Usage
 
-FIXME: explanation
-
-    $ java -jar dentistnada-0.1.0-standalone.jar [args]
+  To start a web server for this web application run: lein ring server.
+  Also you need to import nadaclojure.sql file.
 
 ## Options
 
