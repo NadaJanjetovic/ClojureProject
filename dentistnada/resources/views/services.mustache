@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/jquery-confirm.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/jquery-confirm.min.js"></script>
+    <script src="js/app.js"></script>
+    <title>Zubari</title>
+</head>
+<body>
+
+<div class="container">
+    <ul class="nav nav-pills">
+        <li role="presentation"><a href="/index">Pocetna</a></li>
+        <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Meni<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li role="presentation"><a href="/dentists">Zubari</a></li>
+                <li role="presentation"><a href="/services">Usluge</a></li>
+                <li role="presentation"><a href="/blogs">Clanci</a></li>
+            </ul>
+        </li>
+    </ul>    <br>
+
+
+    <h1>
+        <button class="btn btn-success" id="addServices" onclick="addNewService()">Nova usluga</button>
+        Usluge
+    </h1>    <br>
+    <table class="table table-bordered table-hover">
+        <tr>
+
+            <th bgcolor="#00bfff">ID</th>
+            <th bgcolor="#00bfff">Naziv usluge</th>
+            <th bgcolor="#00bfff">Cena</th>
+            <th bgcolor="#00bfff">Opis</th>
+            <th bgcolor="#00bfff">Izmeni</th>
+            <th bgcolor="#00bfff">Obrisi</th>
+
+            {{#services}}
+
+        <tr class="success">
+            <th>{{id}}</th>
+            <th>{{servicename}}</th>
+            <th>{{price}}</th>
+            <th>{{description}}</th>
+            <td><a href="/dbManager/services/{{id}}/update" class="btn btn-info">Izmeni</a></td>
+            <td><a href="/dbManager/services/{{id}}/delete" class="btn btn-danger">Obrisi</a></td>
+        </tr>
+        {{/services}}
+    </table>
+</div>
+</body>
+</html>

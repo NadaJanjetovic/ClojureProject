@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/jquery-confirm.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/jquery-confirm.min.js"></script>
+    <script src="js/app.js"></script>
+    <title>Zubari</title>
+</head>
+<body>
+
+<div class="container">
+    <ul class="nav nav-pills">
+        <li role="presentation"><a href="/index">Pocetna</a></li>
+        <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Meni <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li role="presentation"><a href="/dentists">Zubari</a></li>
+                <li role="presentation"><a href="/services">Usluge</a></li>
+                <li role="presentation"><a href="/blogs">Clanci</a></li>
+            </ul>
+        </li>
+    </ul>    <br>
+
+
+    <h1>
+        <button class="btn btn-success" id="addDentist" onclick="addDentist()">Novi zubar</button>
+        Zubari
+    </h1>    <br>
+    <table class="table table-bordered table-hover">
+        <tr>
+
+            <th bgcolor="#00bfff">ID</th>
+            <th bgcolor="#00bfff">Ime i prezime</th>
+            <th bgcolor="#00bfff">Telefon</th>
+            <th bgcolor="#00bfff">Radni staz</th>
+            <th bgcolor="#00bfff">Termin</th>
+            <th bgcolor="#00bfff">Izmeni</th>
+            <th bgcolor="#00bfff">Obrisi</th>
+
+            {{#dentists}}
+
+        <tr class="success">
+            <th>{{id}}</th>
+            <th>{{namesurname}}</th>
+            <th>{{phone}}</th>
+            <th>{{yearsofworking}}</th>
+            <th>{{workingtime}}</th>
+            <td><a href="/dbManager/dentist/{{id}}/update" class="btn btn-info">Izmeni</a></td>
+            <td><a href="/dbManager/dentist/{{id}}/delete" class="btn btn-danger">Obrisi</a></td>
+        </tr>
+        {{/dentists}}
+    </table>
+</div>
+</body>
+</html>
